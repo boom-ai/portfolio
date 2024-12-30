@@ -81,10 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Typewriter Effect with 10-Second Change
      const typewriterElement = document.querySelector('.typewriter');
-    const phrases = ["Hi, I'm Sanket Sharma.", "A Software Engineer.", "A Generative AI Enthusiast."];
+    const phrases = ["Hi, I'm Sanket.", "A Software Dev.", "A Chess Player."];
     let phraseIndex = 0;
 
-    function typeWriterEffect(text, element, speed = 100){
+    function typeWriterEffect(text, element, speed = 50){
         let i = 0;
         function type() {
             if (i < text.length) {
@@ -102,5 +102,5 @@ document.addEventListener('DOMContentLoaded', () => {
         phraseIndex = (phraseIndex + 1) % phrases.length;
     }
     changeTypewriterText()
-    setInterval(changeTypewriterText, 10000); // Change every 10 seconds
+    setInterval(changeTypewriterText, 5000); // Change every 10 seconds
 });
