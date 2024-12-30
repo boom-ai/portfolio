@@ -27,17 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', e => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
-             const targetElement = document.getElementById(targetId);
-             if(targetElement){
+            const targetElement = document.getElementById(targetId);
+            if(targetElement){
                 window.scrollTo({
                    top: targetElement.offsetTop,
                    behavior: 'smooth'
                });
-              if (navLinks.classList.contains('nav-active')){
-                navLinks.classList.remove('nav-active')
-                burger.classList.remove('toggle')
-              }
-             }
+                if (navLinks.classList.contains('nav-active')){
+                  navLinks.classList.remove('nav-active')
+                  burger.classList.remove('toggle')
+                }
+            }
         });
     });
 
@@ -58,12 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.2 }); // Adjust threshold as needed
+    }, { threshold: 0.2 });
 
     scrollZoomElements.forEach(element => {
         observer.observe(element);
     });
-  // Skills section movement
+
+    // Skills section movement
     gsap.registerPlugin(ScrollTrigger);
     const skillsSection = document.querySelector('#skills .skills-grid');
     gsap.to(skillsSection, {
@@ -78,4 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
             invalidateOnRefresh: true,
         }
     });
+    // Typewriter Effect with 10-Second Change
+     const typewriterElement = document.querySelector('.typewriter');
+    const phrases = ["Hi, I'm Sanket Sharma.", "A Software Engineer.", "A Generative AI Enthusiast."];
+    let phraseIndex = 0;
+
+    function typeWriterEffect(text, element, speed = 100){
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+               setTimeout(type, speed)
+           }
+        }
+        type();
+    }
+
+    function changeTypewriterText() {
+      typewriterElement.innerHTML = ""
+       typeWriterEffect(phrases[phraseIndex], typewriterElement);
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+    changeTypewriterText()
+    setInterval(changeTypewriterText, 10000); // Change every 10 seconds
 });

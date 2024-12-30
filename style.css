@@ -276,7 +276,7 @@ nav {
 /* About Section */
 .about {
     padding: 80px 20px;
-    background-color: #111;
+    background-color: #000;
     text-align: center;
     overflow: hidden;
 }
@@ -366,7 +366,7 @@ nav {
 .skills {
   padding: 80px 20px;
   text-align: center;
-  background-color: #111;
+  background-color: #000;
   position: relative;
   overflow: hidden;
 }
@@ -387,7 +387,7 @@ nav {
     gap: 20px;
     position: relative;
     padding-bottom: 20px;
-     overflow-x: auto;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
 }
@@ -425,6 +425,7 @@ nav {
 .projects {
     padding: 80px 20px;
     text-align: center;
+    background-color: #000;
     overflow: hidden;
 }
 
@@ -442,7 +443,7 @@ nav {
     gap: 20px;
 }
 .project-card {
-    background-color: #111;
+    background-color: #222;
     padding: 20px;
     text-align: left;
     border-radius: 10px;
@@ -470,7 +471,7 @@ nav {
 .certifications{
     padding: 80px 20px;
     text-align: center;
-    background-color: #111;
+    background-color: #000;
     overflow: hidden;
 }
 .certifications h2{
@@ -500,8 +501,8 @@ nav {
 /* Contact Section */
 .contact {
     padding: 80px 20px;
-    background-color: #111;
     text-align: center;
+    background-color: #000;
     overflow: hidden;
 }
 .contact h2{
@@ -603,11 +604,11 @@ footer {
        width: 90%;
     }
     .about-skills-bar .skill i {
-        margin-left: 0;
-        margin-top: 10px;
-        text-align: left;
-        display: inline-block;
-      }
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: left;
+      display: inline-block;
+    }
 }
 
 /* Typewriter Effect */
@@ -618,18 +619,8 @@ footer {
   margin: 0 auto;
   letter-spacing: .15em;
   animation:
-  typing 3s steps(30, end),
   blink-caret .75s step-end infinite;
 }
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #3498db; }
-}
-
 /* Scroll Zoom Animation */
 .scroll-zoom {
     opacity: 0;
